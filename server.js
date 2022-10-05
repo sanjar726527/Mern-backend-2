@@ -12,6 +12,7 @@ const cors = require('cors')
 const app = express()
 
 // middleware
+app.set("view engine", "ejs")
 app.use(express.json())
 app.use(cors())
 app.use((req,res,next) => {
@@ -29,7 +30,7 @@ mongoose.connect(conn)
     })
 
 // routes
-app.use('/api/workouts', workoutRoutes)
-app.use('/api/user', userRoutes)
+app.use('/workouts', workoutRoutes)
+app.use('/user', userRoutes)
 
 
