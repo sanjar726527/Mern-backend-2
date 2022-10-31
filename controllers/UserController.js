@@ -10,16 +10,6 @@ const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
 };
 
-// get 
-const getViews = async (req,res) => {
-  try {
-    res.render("mail")
-  } catch (err) {
-    throw Error
-  }
-}
-
-
 // signup
 const signupUser = async (req, res) => {
   try {
@@ -99,4 +89,4 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { loginUser, signupUser,getViews };
+module.exports = { loginUser, signupUser };
