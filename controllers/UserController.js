@@ -27,7 +27,6 @@ const signupUser = async (req, res) => {
     }
     if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{4,}$/.test(password)) {
       throw Error("Password is not strong enough");
-      yan;
     }
 
     const exist = await User.findOne({ name });
